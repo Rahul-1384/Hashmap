@@ -56,22 +56,35 @@ import java.util.*;
 
 
 
-class Solution {
-    public int smallestRangeII(int[] nums, int k) {
-        Arrays.sort(nums);
-        int max = nums[nums.length - 1];
-        for(int i=0;i<nums.length;i++){
-            if(i == nums.length-1){
-                nums[i] = nums[i] - k;
-                break;
-            }
-            if(nums[i] <= max){
-                nums[i] = nums[i] + k;
-            }
-        }
-        Arrays.sort(nums);
-        int maxF = nums[nums.length-1];
-        int minF = nums[0];
-        return maxF - minF;
+// class Solution {
+//     public int smallestRangeII(int[] nums, int k) {
+//         Arrays.sort(nums);
+//         int max = nums[nums.length - 1];
+//         for(int i=0;i<nums.length;i++){
+//             if(i == nums.length-1){
+//                 nums[i] = nums[i] - k;
+//                 break;
+//             }
+//             if(nums[i] <= max){
+//                 nums[i] = nums[i] + k;
+//             }
+//         }
+//         Arrays.sort(nums);
+//         int maxF = nums[nums.length-1];
+//         int minF = nums[0];
+//         return maxF - minF;
+//     }
+// }
+
+
+public class rough {
+    public static void main(String[] args) {
+        int[][] arr = {{1,3},{2,10},{3,9},{9,10}};
+        System.out.println(arr.length);
+        System.out.println(arr[0].length);
+        String[] str = {"asd","fds"};
+        int len = str.length;
+        String s = "fsd";
+        int l = str.length;
     }
 }
