@@ -77,14 +77,38 @@ import java.util.*;
 // }
 
 
+// public class rough {
+//     public static void main(String[] args) {
+//         int[][] arr = {{1,3},{2,10},{3,9},{9,10}};
+//         System.out.println(arr.length);
+//         System.out.println(arr[0].length);
+//         String[] str = {"asd","fds"};
+//         int len = str.length;
+//         String s = "fsd";
+//         int l = str.length;
+//     }
+// }
+
+
+
+
 public class rough {
     public static void main(String[] args) {
-        int[][] arr = {{1,3},{2,10},{3,9},{9,10}};
-        System.out.println(arr.length);
-        System.out.println(arr[0].length);
-        String[] str = {"asd","fds"};
-        int len = str.length;
-        String s = "fsd";
-        int l = str.length;
+        int[] arr = {1,2,3,1,5,6,1,4};
+        int start=0;
+        int end=arr.length-1;
+        int max=0;
+        while(start<end){
+            int mh=Math.min(arr[start],arr[end]);
+            int w=end-start;
+            int water=mh*w;
+            if(arr[start]<arr[end]){
+                start++;
+            }
+            else{
+                end--;
+            }
+            max=Math.max(max,water);
+        }
     }
 }
