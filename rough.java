@@ -92,23 +92,49 @@ import java.util.*;
 
 
 
-public class rough {
-    public static void main(String[] args) {
-        int[] arr = {1,2,3,1,5,6,1,4};
-        int start=0;
-        int end=arr.length-1;
-        int max=0;
-        while(start<end){
-            int mh=Math.min(arr[start],arr[end]);
-            int w=end-start;
-            int water=mh*w;
-            if(arr[start]<arr[end]){
-                start++;
-            }
-            else{
-                end--;
-            }
-            max=Math.max(max,water);
+// public class rough {
+//     public static void main(String[] args) {
+//         int[] arr = {1,2,3,1,5,6,1,4};
+//         int start=0;
+//         int end=arr.length-1;
+//         int max=0;
+//         while(start<end){
+//             int mh=Math.min(arr[start],arr[end]);
+//             int w=end-start;
+//             int water=mh*w;
+//             if(arr[start]<arr[end]){
+//                 start++;
+//             }
+//             else{
+//                 end--;
+//             }
+//             max=Math.max(max,water);
+//         }
+//     }
+// }
+
+
+class Solution {
+    public static ListNode addList(ListNode l1,ListNode l2,int carry){
+        if(l1==null || l1==null){
+            return null;
         }
+        int sum=carry;
+        if(l1!=null){
+            sum+=l1.val;
+        }
+        if(l2!=null){
+            sum+=l2.val;
+        }
+        ListNode result=new ListNode(sum%10);
+        if(l1!=null || l2!=null){
+            ListNode next=addList(l1!=null?l1.next:null,l2!=null?l2.next:null,sum>=10?1:0);
+            result.next=next;
+        }
+        return result;
+    }
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode ans=addList(l1,l2,0);
+        return ans;
     }
 }
