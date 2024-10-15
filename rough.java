@@ -113,8 +113,12 @@ import java.util.*;
 //     }
 // }
 
-
-class Solution {
+class rough {
+    public class ListNode{
+        ListNode left;
+        ListNode right;
+        int val;
+    }
     public static ListNode addList(ListNode l1,ListNode l2,int carry){
         if(l1==null || l1==null){
             return null;
